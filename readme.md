@@ -56,3 +56,5 @@ In addition to the base Python libraries, there are numerous external libraries 
 Feel free to explore the provided Python tasks and experiment with the code.
 
 Please do not use git yet, we will introduce that in future lessons.
+
+Change for demo

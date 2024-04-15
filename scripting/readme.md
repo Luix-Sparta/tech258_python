@@ -1,4 +1,3 @@
-iii
 # Scripting in Python
 
 ## What is scripting?

@@ -45,6 +45,18 @@ By adhering to these principles and guidelines, you can design RESTful APIs that
 
 HTTP stands for Hypertext Transfer Protocol. It is an application layer protocol used for transmitting hypermedia documents, such as HTML. HTTPS (HTTP Secure) is a secure version of HTTP that uses encryption (SSL/TLS) to ensure secure communication over the internet.
 
+### What is HTTPS?
+
+HTTPS, or Hypertext Transfer Protocol Secure, is a protocol used for secure communication over a computer network, most commonly the internet. It encrypts data transmitted between the client (such as a web browser) and the server using Transport Layer Security (TLS) or Secure Sockets Layer (SSL), providing encryption, data integrity, and authentication. HTTPS ensures that sensitive information, such as login credentials and financial transactions, remains private and secure, protecting users from eavesdropping and tampering. It has become the standard for securing online transactions and communications, helping to safeguard privacy and mitigate security risks associated with unencrypted HTTP connections.
+
+Key features of HTTPS include:
+- **Encryption**: Data transmitted between client and server is encrypted.
+- **Data Integrity**: Ensures the integrity of transmitted data, preventing unauthorized modifications.
+- **Authentication**: Verifies the identity of the server and, optionally, the client.
+- **TLS/SSL Technology**: Uses Transport Layer Security (TLS) or Secure Sockets Layer (SSL) for encryption and authentication.
+- **Protection**: Safeguards sensitive information from interception and tampering.
+- **Standardization**: Widely adopted for securing online transactions and communications.
+
 ## 5. HTTP Request Structure
 
 ![HTTP_request.png](images/HTTP_request.png)

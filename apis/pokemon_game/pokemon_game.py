@@ -6,10 +6,12 @@ import random
 ran = True
 
 while ran is True:
+    print(f"{"-" * 50}")
     print("Base Form Pokemon Battle Game (ID or name):")
     user_pokemon = input("Input a Pokemon: ")
+    print(f"{"-" * 50}")
 
-    poke_range = range(1,1026)
+    poke_range = range(1, 1026)
     user_pokemon_name_list = requests.get("https://pokeapi.co/api/v2/pokemon/?limit=1025")
     user_pokemon_name_list2 = user_pokemon_name_list.json()
     names = [pokemon["name"] for pokemon in user_pokemon_name_list2["results"]]
@@ -18,7 +20,7 @@ while ran is True:
     #if type(user_pokemon) == int:
     #print(user_pokemon_name_list2)
 
-    if user_pokemon.lower() in names or user_pokemon.isdigit() and int(user_pokemon) in poke_range :
+    if user_pokemon.lower() in names or user_pokemon.isdigit() and int(user_pokemon) in poke_range:
 
         user_poke_req = requests.get(f"https://pokeapi.co/api/v2/pokemon/{user_pokemon}")
         user_pokemon_attack_stat = user_poke_req.json()["stats"][1]["base_stat"]
@@ -30,8 +32,9 @@ while ran is True:
         print(f"User has selected: {user_pokemon_name.capitalize()}")
         print(f"User attack stat: {user_pokemon_attack_stat}")
         print(f"User defence stat: {user_pokemon_defence_stat}")
+        print(f"{"-"* 50}")
 
-        comp_poke_req = requests.get(f"https://pokeapi.co/api/v2/pokemon/{random.randint(1,len(names))}")
+        comp_poke_req = requests.get(f"https://pokeapi.co/api/v2/pokemon/{random.randint(1, len(names))}")
         comp_pokemon_name = comp_poke_req.json()["name"]
         comp_pokemon_attack_stat = comp_poke_req.json()["stats"][1]["base_stat"]
         comp_pokemon_defence_stat = comp_poke_req.json()["stats"][2]["base_stat"]
@@ -39,6 +42,7 @@ while ran is True:
         print(f"Computer has selected: {comp_pokemon_name.capitalize()}")
         print(f"Computer attack stat: {comp_pokemon_attack_stat}")
         print(f"Computer defence stat: {comp_pokemon_defence_stat}")
+        print(f"{"-" * 50}")
 
         #print(user_pokemon_attack_stat)
         #print(comp_pokemon_attack_stat)
@@ -46,13 +50,15 @@ while ran is True:
         dif_user_stats = user_pokemon_attack_stat - comp_pokemon_defence_stat
         dif_comp_stats = comp_pokemon_attack_stat - user_pokemon_defence_stat
 
-
         if dif_user_stats > dif_comp_stats:
             print(f"User has won!")
-        elif dif_comp_stats > dif_user_stats :
+            print(f"{"-" * 50}")
+        elif dif_comp_stats > dif_user_stats:
             print("Computer has won!")
+            print(f"{"-" * 50}")
         else:
             print("There was a tie!")
+            print(f"{"-" * 50}")
 
         ran_condition = input("Do you want to play again, Yes or No? ")
 
@@ -61,7 +67,5 @@ while ran is True:
     else:
         print("Pokemon ID/Name not valid")
         ran = False
-   # poke_count = requests.get("https://pokeapi.co/api/v2/pokemon")
-    #print()
-
-
+# poke_count = requests.get("https://pokeapi.co/api/v2/pokemon")
+#print()
